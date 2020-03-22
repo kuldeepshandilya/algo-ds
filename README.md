@@ -1,2 +1,2 @@
 # algo-ds
-Algorithm data structures
+Algorithm data structures.
