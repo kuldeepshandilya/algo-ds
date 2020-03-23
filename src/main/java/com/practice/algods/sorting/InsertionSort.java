@@ -1,7 +1,6 @@
 package com.practice.algods.sorting;
 
 public class InsertionSort implements SortAlgorithm<Comparable> {
-
   /**
    * Reference array to reason the logic -  3,5,4,9,8
    * Consider array to be divided into two parts - sorted left side and unsorted right side - with first element(array[0]) being only element in initial sorted left side.
@@ -24,6 +23,5 @@ public class InsertionSort implements SortAlgorithm<Comparable> {
     }
     return array;
   }
-
 }
 
