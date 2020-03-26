@@ -13,7 +13,7 @@ public class QuickSortTest {
 
   @Test
   public void testSort() {
-    Comparable[] array = TestData.randomArray(100);
+    Comparable[] array = TestData.randomArray(TestData.size, TestData.range);
     Comparable[] sortedArray = quickSort.sort(array);
     int i = 0;
     while(i < sortedArray.length-1){
