@@ -9,30 +9,34 @@ public class QuickSort implements SortAlgorithm<Comparable> {
   }
 
   private void quickSort(Comparable[] array, int low, int high) {
-    int pivot = partition(array, low, high);
     if(low < high) {
+      int pivot = partition(array, low, high);
       quickSort(array, low, pivot - 1);
       quickSort(array, pivot + 1, high);
     }
   }
 
+
   private int partition(Comparable[] array, int left, int right) {
-     int pivotIndex = pivotIndex(left, right);
-     while(left < right) {
-       while(array[left].compareTo(array[pivotIndex]) < 0){
-         left++;
-       }
-       while(array[right].compareTo(array[pivotIndex]) > 0 ){
-         right--;
-       }
-       if(left < right){
-          swap(array, left, right);
-          left++;
-          right--;
-       }
-     }
-     return pivotIndex;
+    Comparable pivot = array[left];
+    int lb = left, ub = right;
+    while(lb < ub){
+        while (array[lb].compareTo(pivot) <= 0 && lb < array.length-1) { //lb++ used to go beyond array size hence needed to add this check
+          lb++;
+        }
+        while (array[ub].compareTo(pivot) > 0 && ub > 0) {
+          ub--;
+        }
+        if (lb < ub && array[lb].compareTo(array[ub]) > 0) {
+          swap(array, lb, ub);
+        }
+
+    }
+    swap(array, left, ub); //Swap pivot element with 'ub' which now points to a number less thn pivot
+    return ub;
   }
+
+
 
   private void swap(Comparable[] array, int leftIndex, int rightIndex) {
     Comparable left = array[leftIndex];

@@ -1,20 +1,20 @@
 package com.practice.algods.sorting;
 
+
 import org.junit.Assert;
 import org.junit.Test;
 
-public class QuickSortTest {
+public class SelectionSortTest {
+  private SortAlgorithm<Comparable> selectionSort;
 
-  private SortAlgorithm<Comparable> quickSort;
-
-  public QuickSortTest(){
-    quickSort = new QuickSort();
+  public SelectionSortTest(){
+    this.selectionSort = new SelectionSort();
   }
 
   @Test
   public void testSort() {
-    Comparable[] array = TestData.randomArray(100);
-    Comparable[] sortedArray = quickSort.sort(array);
+    Comparable[] array = TestData.randomArray(100); //new Integer[] {3,5,4,9,8, -1};
+    Comparable[] sortedArray = selectionSort.sort(array);
     int i = 0;
     while(i < sortedArray.length-1){
       System.out.print(sortedArray[i]+" ");
@@ -22,5 +22,4 @@ public class QuickSortTest {
       i++;
     }
   }
-
 }
