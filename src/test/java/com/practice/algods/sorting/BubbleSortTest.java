@@ -12,7 +12,7 @@ public class BubbleSortTest {
 
   @Test
   public void testSort() {
-    Comparable[] array = TestData.randomArray(100); //new Integer[] {3,5,4,9,8, -1};
+    Comparable[] array = TestData.randomArray(TestData.size, TestData.range); //new Integer[] {3,5,4,9,8, -1};
     Comparable[] sortedArray = bubbleSort.sort(array);
     int i = 0;
     while(i < sortedArray.length-1){
