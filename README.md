@@ -11,3 +11,4 @@ Sorting Algorithms -
  - Quick Sort
  - Merge Sort
  - Insertion Sort
+ - Heap Sort
