@@ -17,4 +17,18 @@ public class BST {
     }
   }
 
+
+  public TreeNode<Comparable> insert(TreeNode<Comparable> root, Comparable itemToInsert) {
+    if(root == null ){
+      return new TreeNode<>(itemToInsert);
+    } else {
+      if(itemToInsert.compareTo(root.getData()) < 0) {
+        root.setLeftChild(insert(root.getLeftChild(), itemToInsert));
+        return root;
+      } else {
+        root.setRightChild(insert(root.getRightChild(), itemToInsert));
+        return root;
+      }
+    }
+  }
 }

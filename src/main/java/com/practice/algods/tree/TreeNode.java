@@ -3,6 +3,11 @@ package com.practice.algods.tree;
 public class TreeNode<Comparable> {
   private Comparable data;
   private TreeNode leftChild, rightChild;
+
+  public TreeNode(Comparable data){
+    this.data = data;
+  }
+
   public TreeNode(Comparable data, TreeNode leftChild, TreeNode rightChild) {
     this.data = data;
     this.leftChild = leftChild;

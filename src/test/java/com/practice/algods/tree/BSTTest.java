@@ -35,4 +35,15 @@ public class BSTTest {
     Assert.assertTrue(notFound == null);
   }
 
+  @Test
+  public void testInsert() {
+    Comparable  nonExistingData = (TestData.range + 1);
+    TreeNode<Comparable> root = TreeUtil.createTree(new QuickSort().sort(array));
+    TreeNode<Comparable> searchResult = bst.search(root, nonExistingData);
+    Assert.assertTrue((searchResult == null));
+    bst.insert(root, nonExistingData);
+    searchResult = bst.search(root, nonExistingData);
+    Assert.assertTrue(searchResult != null);
+    Assert.assertTrue(nonExistingData.compareTo(searchResult.getData()) == 0);
+  }
 }
