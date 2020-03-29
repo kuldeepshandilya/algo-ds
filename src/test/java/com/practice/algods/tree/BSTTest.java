@@ -46,4 +46,38 @@ public class BSTTest {
     Assert.assertTrue(searchResult != null);
     Assert.assertTrue(nonExistingData.compareTo(searchResult.getData()) == 0);
   }
+
+  @Test
+  public void testDelete() {
+    Comparable  nonExistingData1 = (TestData.range + 1), nonExistingData2 = (TestData.range + 2),nonExistingData3 = (TestData.range + 3);
+    TreeNode<Comparable> root = TreeUtil.createTree(new QuickSort().sort(array));
+    TreeNode<Comparable> searchResult = bst.search(root, nonExistingData1);
+    Assert.assertTrue((searchResult == null));
+    searchResult = bst.search(root, nonExistingData2);
+    Assert.assertTrue((searchResult == null));
+    searchResult = bst.search(root, nonExistingData3);
+    Assert.assertTrue((searchResult == null));
+
+    bst.insert(root, nonExistingData1);
+    bst.insert(root, nonExistingData2);
+    bst.insert(root, nonExistingData3);
+
+    searchResult = bst.search(root, nonExistingData1);
+    Assert.assertTrue(searchResult != null);
+    searchResult = bst.search(root, nonExistingData2);
+    Assert.assertTrue(searchResult != null);
+    searchResult = bst.search(root, nonExistingData3);
+    Assert.assertTrue(searchResult != null);
+
+    bst.delete(root, nonExistingData1);
+    bst.delete(root, nonExistingData2);
+    bst.delete(root, nonExistingData3);
+
+    searchResult = bst.search(root, nonExistingData1);
+    Assert.assertTrue(searchResult == null);
+    searchResult = bst.search(root, nonExistingData2);
+    Assert.assertTrue(searchResult == null);
+    searchResult = bst.search(root, nonExistingData3);
+    Assert.assertTrue(searchResult == null);
+  }
 }
