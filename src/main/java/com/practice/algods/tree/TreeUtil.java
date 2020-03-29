@@ -19,8 +19,13 @@ public class TreeUtil {
     return treeDataFromInOrderWalk;
   }
 
-  private static TreeNode createTree(Comparable[] treeData) {
+  public static TreeNode createTree(Comparable[] treeData) {
     Comparable[] sortedTreeData = new QuickSort().sort(treeData);
+    TreeNode root = createTreeFromSortedArray(sortedTreeData, 0, sortedTreeData.length-1);
+    return root;
+  }
+
+  public static TreeNode createTreeFromSortedArray(Comparable[] sortedTreeData) {
     TreeNode root = createTreeFromSortedArray(sortedTreeData, 0, sortedTreeData.length-1);
     return root;
   }
