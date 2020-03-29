@@ -12,3 +12,7 @@ Sorting Algorithms -
  - Merge Sort
  - Insertion Sort
  - Heap Sort
+ 
+ Tree
+ - Creating BST from an array (input as unsorted array, creating array after sorting it using a sort algorithm)
+ - Inorder tranversal
