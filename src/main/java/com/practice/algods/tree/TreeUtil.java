@@ -6,7 +6,7 @@ import java.util.List;
 
 public class TreeUtil {
 
-  public static List<Comparable> treeDataFromInOrderWalk = new ArrayList<>();
+  private static List<Comparable> treeDataFromInOrderWalk = new ArrayList<>();
 
   /**
    *
@@ -29,7 +29,7 @@ public class TreeUtil {
     if(start > end){
       return null;
     }
-    int mid =  start + (end - start)/2;
+    int mid =  (start + end) /2;
     TreeNode root = new TreeNode(array[mid], null, null);
     root.setLeftChild(createTreeFromSortedArray(array, start, mid-1));
     root.setRightChild(createTreeFromSortedArray(array, mid+1, end));
