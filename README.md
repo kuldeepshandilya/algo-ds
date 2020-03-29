@@ -15,4 +15,4 @@ Sorting Algorithms -
  
  Tree
  - Creating BST from an array (input as unsorted array, creating array after sorting it using a sort algorithm)
- - BST search, insert, traversals (inorder)
+ - BST search, insert, Delete, traversals (inorder)
